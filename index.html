@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCAR FCL Viewer</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0056b3"/>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>TCAR - FCL Regulation Viewer (PWA)</h1>
+        <div id="status">กำลังโหลดและประมวลผล PDF...</div>
+
+        <div class="controls" style="display:none;">
+            <select id="subpart-select" class="selector">
+                <option value="">-- เลือก SUBPART --</option>
+            </select>
+            <select id="section-select" class="selector" disabled>
+                <option value="">-- เลือก SECTION --</option>
+            </select>
+            <select id="fcl-select" class="selector" disabled>
+                <option value="">-- เลือก FCL --</option>
+            </select>
+        </div>
+        <div id="content-display">
+            <p>กรุณาเลือกข้อมูลจากเมนูด้านบน</p>
+        </div>
+        <button id="translate-btn" disabled>แปลเป็นภาษาไทย 🇹🇭</button>
+        <div id="translated-content" class="translated-box" style="display:none;">
+             <h3>เนื้อหาฉบับแปล:</h3>
+             <p></p>
+        </div>
+    </div>
+
+    <script src="parser.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
